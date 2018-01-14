@@ -2,9 +2,10 @@ import styled, { injectGlobal } from 'styled-components'
 
 injectGlobal`
     body {
-        margin: 0;
+        margin: auto;
         padding: 0;
         font-family: sans-serif;
+        text-align: center;
     }
 `
 
