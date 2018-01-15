@@ -1,7 +1,8 @@
 import React, { Component } from "react"
 import Header from "./components/Header"
 import Footer from "./components/Footer"
-import RecipeList from './components/RecipeList'
+import RecipeList from "./components/RecipeList"
+import AddRecipe from "./containers/AddRecipe"
 
 class App extends Component {
   render() {
@@ -9,6 +10,7 @@ class App extends Component {
       <div>
         <Header />
         <RecipeList />
+        <AddRecipe />
         <Footer />
       </div>
     )

@@ -1,4 +1,5 @@
 import styled, { injectGlobal } from "styled-components"
+import { Button, ButtonOutline } from 'rebass'
 
 injectGlobal`
     body {
@@ -12,7 +13,7 @@ injectGlobal`
 export const RecipePanel = styled.div`
   .Collapsible__contentInner {
     padding: 10px;
-    border: 1px solid #ebebeb;
+    border: 1px solid black;
     border-top: 0;
   }
   .Collapsible__contentInner p {
@@ -21,7 +22,7 @@ export const RecipePanel = styled.div`
     line-height: 20px;
   }
   .Collapsible__contentInner p:last-child {
-    margin-bottom: 0;
+    margin-bottom: 5px;
   }
   .Collapsible__trigger {
     display: block;
@@ -60,4 +61,13 @@ export const FooterContainer = styled.div`
   a:visited {
     text-decoration: none;
   }
+`
+
+export const RedButton = styled(Button)`
+  background-color: red;
+  border-radius: 5px;
+`
+
+export const WhiteButton = styled(ButtonOutline)`
+  border-radius: 5px;
 `
