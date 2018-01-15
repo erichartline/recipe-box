@@ -1,16 +1,28 @@
 import { ADD_RECIPE, REMOVE_RECIPE } from "../actions"
 
-// set empty initial state
+// set initial state with three recipes
 let initialState = {
-  recipes: []
+  recipes: [
+    {
+      name: "Pumpkin Pie",
+      ingredients: ["Pumpkin Puree", "Sweetened Condensed Milk", "Eggs", "Pumpkin Pie Spice", "Pie Crust"]
+    },
+    {
+      name: "Spaghetti",
+      ingredients: ["Noodles", "Tomato Sauce", "(Optional) Meatballs"]
+    },
+    {
+      name: "Onion Pie",
+      ingredients: ["Onion", "Pie Crust", "Sounds Yummy right?"]
+    }
+  ]
 }
 
 const rootReducer = (state = initialState, action) => {
-  // add switch for add/remove recipes
   switch (action.type) {
     case ADD_RECIPE:
       return {
-        recipes: []
+        recipes: [...state.recipes, action.addRecipe]
       }
     case REMOVE_RECIPE:
       return {

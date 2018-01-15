@@ -1,9 +1,10 @@
 import React from "react"
 import FontAwesome from "react-fontawesome"
+import { FooterContainer } from '../styles'
 
 const Footer = () => {
   return (
-    <div>
+    <FooterContainer>
       <p>
         Written and coded by{" "}
         <a
@@ -21,9 +22,9 @@ const Footer = () => {
         >
           freeCodeCamp
         </a>{" "}
-        project. <FontAwesome name="rocket" />
+        project. <FontAwesome name="free-code-camp" />
       </p>
-    </div>
+    </FooterContainer>
   )
 }
 

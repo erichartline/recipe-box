@@ -1,21 +1,14 @@
 import React, { Component } from "react"
 import Header from "./components/Header"
 import Footer from "./components/Footer"
-import { Panel, PanelHeader, Box, Subhead } from "rebass"
+import RecipeList from './components/RecipeList'
 
 class App extends Component {
   render() {
     return (
       <div>
         <Header />
-        <Panel color="blue">
-          <PanelHeader color="white" bg="blue">
-            Hello
-          </PanelHeader>
-          <Box p={3}>
-            <Subhead>Panel</Subhead>
-          </Box>
-        </Panel>
+        <RecipeList />
         <Footer />
       </div>
     )
