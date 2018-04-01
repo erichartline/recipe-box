@@ -1,6 +1,6 @@
 import React from "react"
-import Collapsible from "react-collapsible"
 import Grid from "material-ui/Grid"
+import Card from "material-ui/Card"
 import { RecipePanel, RedButton, WhiteButton } from "../styles"
 
 const RecipeSingle = () => {
@@ -8,7 +8,7 @@ const RecipeSingle = () => {
     <Grid container justify="center">
       <Grid item>
         <RecipePanel>
-          <Collapsible trigger="Start here">
+          <Card>
             <h2>Ingredients</h2>
             <p>
               This is the collapsible content. It can be any element or React
@@ -17,7 +17,7 @@ const RecipeSingle = () => {
             <WhiteButton>Edit</WhiteButton>&nbsp;
             <RedButton>Delete</RedButton>
             <br />
-          </Collapsible>
+          </Card>
         </RecipePanel>
       </Grid>
     </Grid>
