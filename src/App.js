@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import { connect } from "react-redux"
 import Header from "./components/Header"
 import Footer from "./components/Footer"
 import RecipeList from "./components/RecipeList"
@@ -9,7 +10,7 @@ class App extends Component {
     return (
       <div>
         <Header />
-        <RecipeList />
+        <RecipeList recipes={this.props.recipes} />
         <AddRecipe />
         <Footer />
       </div>
@@ -17,4 +18,10 @@ class App extends Component {
   }
 }
 
-export default App
+const mapStateToProps = state => {
+  return {
+    recipes: state.recipes
+  }
+}
+
+export default connect(mapStateToProps)(App)

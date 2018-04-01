@@ -18,8 +18,8 @@ const initialState = {
       ingredients: ["Noodles", "Tomato Sauce", "(Optional) Meatballs"]
     },
     {
-      name: "Onion Pie",
-      ingredients: ["Onion", "Pie Crust", "Sounds Yummy right?"]
+      name: "Avocado Toast",
+      ingredients: ["Avocado", "Toast"]
     }
   ]
 }

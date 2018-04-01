@@ -1,6 +1,6 @@
 import React from "react"
 import FontAwesome from "react-fontawesome"
-import { FooterContainer } from '../styles'
+import { FooterContainer } from "../styles"
 
 const Footer = () => {
   return (
@@ -20,9 +20,9 @@ const Footer = () => {
           rel="noopener noreferrer"
           target="_blank"
         >
-          freeCodeCamp
+          freeCodeCamp <FontAwesome name="free-code-camp" />
         </a>{" "}
-        project. <FontAwesome name="free-code-camp" />
+        project.
       </p>
     </FooterContainer>
   )

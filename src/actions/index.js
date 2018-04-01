@@ -10,6 +10,7 @@ export const addRecipe = recipe => {
   }
 }
 
+// edits existing recipe
 export const editRecipe = recipe => {
   return {
     type: EDIT_RECIPE,

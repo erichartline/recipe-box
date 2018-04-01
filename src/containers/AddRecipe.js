@@ -3,7 +3,7 @@ import { connect } from "react-redux"
 import Button from "material-ui/Button"
 import AddIcon from "material-ui-icons/Add"
 import Modal from "./Modal"
-import { addRecipe } from "../actions"
+// import { addRecipe } from "../actions"
 import { InputBox } from "../styles"
 
 class AddRecipe extends Component {
@@ -41,7 +41,7 @@ class AddRecipe extends Component {
 
 const mapStateToProps = state => {
   return {
-    // recipes
+    recipes: state.recipes
   }
 }
 
