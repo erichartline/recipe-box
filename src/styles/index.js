@@ -1,5 +1,4 @@
 import styled, { injectGlobal } from "styled-components"
-import Button from "material-ui/Button"
 
 injectGlobal`
     body {
@@ -7,50 +6,8 @@ injectGlobal`
         padding: 0;
         font-family: sans-serif;
         text-align: center;
+        width: 80%;
     }
-`
-
-export const RecipePanel = styled.div`
-  .Collapsible__contentInner {
-    padding: 10px;
-    border: 1px solid black;
-    border-top: 0;
-  }
-  .Collapsible__contentInner p {
-    margin-bottom: 10px;
-    font-size: 14px;
-    line-height: 20px;
-  }
-  .Collapsible__contentInner p:last-child {
-    margin-bottom: 5px;
-  }
-  .Collapsible__trigger {
-    display: block;
-    font-weight: 400;
-    text-decoration: none;
-    color: #333333;
-    position: relative;
-    border: 1px solid white;
-    padding: 10px;
-    background: #00ac9d;
-    color: white;
-  }
-  .Collapsible__trigger:after {
-    font-family: "FontAwesome";
-    content: "\f107";
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    display: block;
-    transition: transform 300ms;
-  }
-  .Collapsible__trigger.is-open:after {
-    transform: rotateZ(180deg);
-  }
-  .Collapsible__trigger.is-disabled {
-    opacity: 0.5;
-    background-color: grey;
-  }
 `
 
 export const FooterContainer = styled.div`
@@ -63,15 +20,31 @@ export const FooterContainer = styled.div`
   }
 `
 
-export const RedButton = styled(Button)`
-  && {
-    background-color: red;
-    border-radius: 5px;
+export const InputBox = styled.textarea`
+  width: 50%;
+  padding-left: 5px;
+  margin-right: 5px;
+`
+
+export const BackdropStyle = styled.div`
+   {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 50px;
   }
 `
 
-export const WhiteButton = styled(Button)`
-  && {
+export const ModalStyle = styled.div`
+   {
+    background-color: #fff;
     border-radius: 5px;
+    width: 50%;
+    height: 300px;
+    margin: 0 auto;
+    padding: 30px;
   }
 `

@@ -1,24 +1,19 @@
 import React from "react"
 import Grid from "material-ui/Grid"
 import Card from "material-ui/Card"
-import { RecipePanel, RedButton, WhiteButton } from "../styles"
+import Button from "material-ui/Button"
 
 const RecipeSingle = () => {
   return (
     <Grid container justify="center">
       <Grid item>
-        <RecipePanel>
-          <Card>
-            <h2>Ingredients</h2>
-            <p>
-              This is the collapsible content. It can be any element or React
-              component you like.
-            </p>
-            <WhiteButton>Edit</WhiteButton>&nbsp;
-            <RedButton>Delete</RedButton>
-            <br />
-          </Card>
-        </RecipePanel>
+        <Card>
+          <h2>Ingredients</h2>
+          <p>Recipe goes here.</p>
+          <Button>Edit</Button>&nbsp;
+          <Button>Delete</Button>
+          <br />
+        </Card>
       </Grid>
     </Grid>
   )
