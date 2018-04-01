@@ -41,7 +41,7 @@ class AddRecipe extends Component {
 
 const mapStateToProps = state => {
   return {
-    addRecipe
+    // recipes
   }
 }
 

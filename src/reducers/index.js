@@ -1,7 +1,7 @@
 import { ADD_RECIPE, EDIT_RECIPE, REMOVE_RECIPE } from "../actions"
 
 // set initial state with three recipes
-let initialState = {
+const initialState = {
   recipes: [
     {
       name: "Pumpkin Pie",

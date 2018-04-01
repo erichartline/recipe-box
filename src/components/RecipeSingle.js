@@ -8,6 +8,7 @@ const RecipeSingle = () => {
     <Grid container justify="center">
       <Grid item>
         <Card>
+          <h1>Name of Recipe</h1>
           <h2>Ingredients</h2>
           <p>Recipe goes here.</p>
           <Button>Edit</Button>&nbsp;
