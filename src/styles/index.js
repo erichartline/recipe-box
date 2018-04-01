@@ -1,5 +1,5 @@
 import styled, { injectGlobal } from "styled-components"
-import { Button, ButtonOutline } from 'rebass'
+import Button from "material-ui/Button"
 
 injectGlobal`
     body {
@@ -64,10 +64,14 @@ export const FooterContainer = styled.div`
 `
 
 export const RedButton = styled(Button)`
-  background-color: red;
-  border-radius: 5px;
+  && {
+    background-color: red;
+    border-radius: 5px;
+  }
 `
 
-export const WhiteButton = styled(ButtonOutline)`
-  border-radius: 5px;
+export const WhiteButton = styled(Button)`
+  && {
+    border-radius: 5px;
+  }
 `

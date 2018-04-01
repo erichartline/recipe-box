@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Button } from "rebass"
+import Button from "material-ui/Button"
 
 class AddRecipe extends Component {
   render() {

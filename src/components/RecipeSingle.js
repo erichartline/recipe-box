@@ -1,12 +1,12 @@
 import React from "react"
 import Collapsible from "react-collapsible"
-import { Flex, Box } from "rebass"
+import Grid from "material-ui/Grid"
 import { RecipePanel, RedButton, WhiteButton } from "../styles"
 
 const RecipeSingle = () => {
   return (
-    <Flex justify="center">
-      <Box>
+    <Grid container justify="center">
+      <Grid item>
         <RecipePanel>
           <Collapsible trigger="Start here">
             <h2>Ingredients</h2>
@@ -19,8 +19,8 @@ const RecipeSingle = () => {
             <br />
           </Collapsible>
         </RecipePanel>
-      </Box>
-    </Flex>
+      </Grid>
+    </Grid>
   )
 }
 

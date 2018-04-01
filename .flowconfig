@@ -1,11 +1,14 @@
 [ignore]
+<PROJECT_ROOT>/node_modules/*
 
 [include]
 
 [libs]
+flow-typed
 
 [lints]
 
 [options]
 
 [strict]
+module.system.node.resolve_dirname=./src
