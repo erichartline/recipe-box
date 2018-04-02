@@ -6,23 +6,30 @@ export const REMOVE_RECIPE = "REMOVE_RECIPE"
 export const addRecipe = (title, ingredients) => {
   return {
     type: ADD_RECIPE,
-    title: title,
+    title,
     ingredients: ingredients
+      .split(",")
+      .filter(el => el !== "")
+      .map(el => el.trim())
   }
 }
 
 // edits existing recipe
-export const editRecipe = recipe => {
+export const editRecipe = (title, ingredients) => {
   return {
     type: EDIT_RECIPE,
-    recipe
+    title,
+    ingredients: ingredients
+      .split(",")
+      .filter(el => el !== "")
+      .map(el => el.trim())
   }
 }
 
 // removes recipe
-export const removeRecipe = recipe => {
+export const removeRecipe = title => {
   return {
     type: REMOVE_RECIPE,
-    recipe
+    title
   }
 }

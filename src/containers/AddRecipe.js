@@ -26,10 +26,12 @@ class AddRecipe extends Component {
     this.setState({ showForm: !this.state.showForm })
   }
 
-  // addNewRecipe = (title, ingredients) => {
-  //   this.setState({ showForm: !this.state.showForm })
-  //   this.props.addRecipe(title, ingredients)
-  // }
+  addNewRecipe = (title, ingredients) => {
+    this.setState({ showForm: !this.state.showForm })
+    this.props.onClick(this.state.title, this.state.ingredients)
+    console.log(this.state)
+    console.log(this.props)
+  }
 
   render() {
     return (
@@ -51,14 +53,7 @@ class AddRecipe extends Component {
             onChange={this.handleTextBox}
             placeholder="Enter the ingredients here..."
           />
-          {/* <Button
-            onClick={this.addNewRecipe(
-              this.state.title,
-              this.state.ingredients
-            )}
-          >
-            Add Recipe
-          </Button> */}
+          <Button onClick={this.addNewRecipe}>Add Recipe</Button>
         </AddRecipeForm>
       </Grid>
     )
@@ -71,4 +66,12 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, { addRecipe })(AddRecipe)
+const mapDispatchToProps = dispatch => {
+  return {
+    onClick: (title, ingredients) => {
+      dispatch(addRecipe(title, ingredients))
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(AddRecipe)
