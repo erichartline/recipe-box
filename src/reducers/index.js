@@ -4,7 +4,7 @@ import { ADD_RECIPE, EDIT_RECIPE, REMOVE_RECIPE } from "../actions"
 const initialState = {
   recipes: [
     {
-      name: "Pumpkin Pie",
+      title: "Pumpkin Pie",
       ingredients: [
         "Pumpkin Puree",
         "Sweetened Condensed Milk",
@@ -14,11 +14,11 @@ const initialState = {
       ]
     },
     {
-      name: "Spaghetti",
+      title: "Spaghetti",
       ingredients: ["Noodles", "Tomato Sauce", "(Optional) Meatballs"]
     },
     {
-      name: "Avocado Toast",
+      title: "Avocado Toast",
       ingredients: ["Avocado", "Toast"]
     }
   ]

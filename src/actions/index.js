@@ -3,10 +3,11 @@ export const EDIT_RECIPE = "EDIT_RECIPE"
 export const REMOVE_RECIPE = "REMOVE_RECIPE"
 
 // action sends new recipe to store
-export const addRecipe = recipe => {
+export const addRecipe = (title, ingredients) => {
   return {
     type: ADD_RECIPE,
-    payload: recipe
+    title: title,
+    ingredients: ingredients
   }
 }
 

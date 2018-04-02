@@ -1,4 +1,5 @@
 import styled, { injectGlobal } from "styled-components"
+import Card from "material-ui/Card"
 
 injectGlobal`
     body {
@@ -7,6 +8,7 @@ injectGlobal`
         font-family: sans-serif;
         text-align: center;
         width: 80%;
+        background-color: #c7c7c7;
     }
 `
 
@@ -52,5 +54,11 @@ export const ModalStyle = styled.div`
     height: 300px;
     margin: 0 auto;
     padding: 30px;
+  }
+`
+
+export const CardStyle = styled(Card)`
+  && {
+    min-height: 300px;
   }
 `

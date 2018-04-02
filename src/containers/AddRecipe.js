@@ -4,7 +4,7 @@ import Grid from "material-ui/Grid"
 import Button from "material-ui/Button"
 import AddIcon from "material-ui-icons/Add"
 import AddRecipeForm from "../components/AddRecipeForm"
-// import { addRecipe } from "../actions"
+import { addRecipe } from "../actions"
 import { TextBoxStyle, InputBoxStyle } from "../styles"
 
 class AddRecipe extends Component {
@@ -26,10 +26,15 @@ class AddRecipe extends Component {
     this.setState({ showForm: !this.state.showForm })
   }
 
+  // addNewRecipe = (title, ingredients) => {
+  //   this.setState({ showForm: !this.state.showForm })
+  //   this.props.addRecipe(title, ingredients)
+  // }
+
   render() {
     return (
-      <Grid container justify="flex-end">
-        <Grid item>
+      <Grid container justify="flex-end" spacing={16}>
+        <Grid item xs={12} sm={6} lg={3}>
           <Button variant="fab" color="primary" onClick={this.toggleForm}>
             <AddIcon />
           </Button>
@@ -46,6 +51,14 @@ class AddRecipe extends Component {
             onChange={this.handleTextBox}
             placeholder="Enter the ingredients here..."
           />
+          {/* <Button
+            onClick={this.addNewRecipe(
+              this.state.title,
+              this.state.ingredients
+            )}
+          >
+            Add Recipe
+          </Button> */}
         </AddRecipeForm>
       </Grid>
     )
@@ -58,4 +71,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps)(AddRecipe)
+export default connect(mapStateToProps, { addRecipe })(AddRecipe)
