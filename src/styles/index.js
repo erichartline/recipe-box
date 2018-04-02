@@ -20,7 +20,13 @@ export const FooterContainer = styled.div`
   }
 `
 
-export const InputBox = styled.textarea`
+export const TextBoxStyle = styled.textarea`
+  width: 50%;
+  padding-left: 5px;
+  margin-right: 5px;
+`
+
+export const InputBoxStyle = styled.input`
   width: 50%;
   padding-left: 5px;
   margin-right: 5px;
