@@ -29,6 +29,7 @@ const rootReducer = (state = initialState, action) => {
     case ADD_RECIPE:
       return {
         ...state,
+        id: action.id,
         title: action.title,
         ingredients: action.ingredients
       }
@@ -36,13 +37,14 @@ const rootReducer = (state = initialState, action) => {
       if (state.title === action.title) {
         return {
           ...state,
+          id: action.id,
           title: action.title,
           ingredients: action.ingredients
         }
       }
       return state
     case REMOVE_RECIPE:
-      return state.filter(recipe => recipe.title !== action.title)
+      return state.filter(recipe => recipe.id !== action.id)
     default:
       return state
   }

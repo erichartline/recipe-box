@@ -3,9 +3,10 @@ export const EDIT_RECIPE = "EDIT_RECIPE"
 export const REMOVE_RECIPE = "REMOVE_RECIPE"
 
 // action sends new recipe to store
-export const addRecipe = (title, ingredients) => {
+export const addRecipe = (id, title, ingredients) => {
   return {
     type: ADD_RECIPE,
+    id,
     title,
     ingredients: ingredients
       .split(",")
@@ -15,9 +16,10 @@ export const addRecipe = (title, ingredients) => {
 }
 
 // edits existing recipe
-export const editRecipe = (title, ingredients) => {
+export const editRecipe = (id, title, ingredients) => {
   return {
     type: EDIT_RECIPE,
+    id,
     title,
     ingredients: ingredients
       .split(",")
@@ -27,9 +29,9 @@ export const editRecipe = (title, ingredients) => {
 }
 
 // removes recipe
-export const removeRecipe = title => {
+export const removeRecipe = id => {
   return {
     type: REMOVE_RECIPE,
-    title
+    id
   }
 }

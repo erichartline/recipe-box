@@ -1,6 +1,6 @@
 import React from "react"
 import Grid from "material-ui/Grid"
-import Card, { CardHeader, CardContent } from "material-ui/Card"
+import { CardHeader, CardContent } from "material-ui/Card"
 import Avatar from "material-ui/Avatar"
 import IconButton from "material-ui/IconButton"
 import Button from "material-ui/Button"

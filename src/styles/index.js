@@ -1,11 +1,11 @@
 import styled, { injectGlobal } from "styled-components"
 import Card from "material-ui/Card"
+import "typeface-roboto"
 
 injectGlobal`
     body {
         margin: auto;
         padding: 0;
-        font-family: sans-serif;
         text-align: center;
         width: 80%;
         background-color: #c7c7c7;

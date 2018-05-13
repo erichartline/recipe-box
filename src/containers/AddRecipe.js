@@ -10,6 +10,7 @@ import { TextBoxStyle, InputBoxStyle } from "../styles"
 class AddRecipe extends Component {
   state = {
     showForm: false,
+    id: "",
     title: "",
     ingredients: ""
   }
@@ -26,9 +27,9 @@ class AddRecipe extends Component {
     this.setState({ showForm: !this.state.showForm })
   }
 
-  addNewRecipe = (title, ingredients) => {
+  addNewRecipe = (id, title, ingredients) => {
     this.setState({ showForm: !this.state.showForm })
-    this.props.onClick(this.state.title, this.state.ingredients)
+    this.onClick(this.state.id, this.state.title, this.state.ingredients)
     console.log(this.state)
     console.log(this.props)
   }
@@ -53,7 +54,15 @@ class AddRecipe extends Component {
             onChange={this.handleTextBox}
             placeholder="Enter the ingredients here..."
           />
-          <Button onClick={this.addNewRecipe}>Add Recipe</Button>
+          <Button
+            onClick={this.props.onClick(
+              this.state.id,
+              this.state.title,
+              this.state.ingredients
+            )}
+          >
+            Add Recipe
+          </Button>
         </AddRecipeForm>
       </Grid>
     )
@@ -68,8 +77,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onClick: (title, ingredients) => {
-      dispatch(addRecipe(title, ingredients))
+    onClick: (id, title, ingredients) => {
+      dispatch(addRecipe(id, title, ingredients))
     }
   }
 }
