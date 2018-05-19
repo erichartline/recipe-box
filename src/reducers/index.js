@@ -43,7 +43,10 @@ const rootReducer = (state = initialState, action) => {
       }
       return state
     case REMOVE_RECIPE:
-      return state.filter(recipe => recipe.id !== action.payload.id)
+      return {
+        ...state,
+        recipes: state.recipes.filter(recipe => recipe.id !== action.payload.id)
+      }
     default:
       return state
   }

@@ -4,16 +4,22 @@ import Button from "material-ui/Button"
 import { addRecipe } from "actions"
 import { BackdropStyle, ModalStyle, TextBoxStyle, InputBoxStyle } from "styles"
 
+const randomId = Math.floor(Math.random() * 1000)
+
 class AddRecipeForm extends Component {
   state = {
-    id: this.props.recipes.length + 1,
+    id: randomId.toString(),
     title: "",
     ingredients: ""
   }
 
   addNewRecipe = (id, title, ingredients) => {
-    this.setState({ showForm: !this.state.showForm })
-    this.props.onClick(this.state.id, this.state.title, this.state.ingredients)
+    this.props.addNewRecipe(
+      this.state.id,
+      this.state.title,
+      this.state.ingredients
+    )
+    this.props.onClose()
   }
 
   handleInput = e => {
@@ -60,7 +66,7 @@ const mapStateToProps = ({ recipes }) => ({ recipes })
 
 const mapDispatchToProps = dispatch => {
   return {
-    onClick: (id, title, ingredients) => {
+    addNewRecipe: (id, title, ingredients) => {
       dispatch(addRecipe(id, title, ingredients))
     }
   }
