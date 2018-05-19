@@ -41,3 +41,9 @@ export const removeRecipe = id => {
     }
   }
 }
+
+// export const addRecipeFunction = () => {
+//   return dispatch => {
+//     dispatch(addRecipe())
+//   }
+// }

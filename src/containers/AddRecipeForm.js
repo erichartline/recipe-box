@@ -6,16 +6,14 @@ import { BackdropStyle, ModalStyle, TextBoxStyle, InputBoxStyle } from "styles"
 
 class AddRecipeForm extends Component {
   state = {
-    id: "",
+    id: this.props.recipes.length + 1,
     title: "",
     ingredients: ""
   }
 
   addNewRecipe = (id, title, ingredients) => {
     this.setState({ showForm: !this.state.showForm })
-    this.onClick(this.state.id, this.state.title, this.state.ingredients)
-    console.log(this.state)
-    console.log(this.props)
+    this.props.onClick(this.state.id, this.state.title, this.state.ingredients)
   }
 
   handleInput = e => {
@@ -45,7 +43,7 @@ class AddRecipeForm extends Component {
             onChange={this.handleTextBox}
             placeholder="Enter the ingredients here..."
           />
-          <Button color="primary" onClick={this.props.onClose}>
+          <Button color="primary" onClick={this.addNewRecipe}>
             Add
           </Button>
           <Button color="secondary" onClick={this.props.onClose}>

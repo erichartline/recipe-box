@@ -4,6 +4,7 @@ import { ADD_RECIPE, EDIT_RECIPE, REMOVE_RECIPE } from "actions"
 const initialState = {
   recipes: [
     {
+      id: "1",
       title: "Pumpkin Pie",
       ingredients: [
         "Pumpkin Puree",
@@ -14,10 +15,12 @@ const initialState = {
       ]
     },
     {
+      id: "2",
       title: "Spaghetti",
       ingredients: ["Noodles", "Tomato Sauce", "(Optional) Meatballs"]
     },
     {
+      id: "3",
       title: "Avocado Toast",
       ingredients: ["Avocado", "Toast"]
     }
@@ -29,17 +32,13 @@ const rootReducer = (state = initialState, action) => {
     case ADD_RECIPE:
       return {
         ...state,
-        id: action.payload.id,
-        title: action.payload.title,
-        ingredients: action.payload.ingredients
+        recipes: [...state.recipes, action.payload]
       }
     case EDIT_RECIPE:
       if (state.title === action.payload.title) {
         return {
           ...state,
-          id: action.payload.id,
-          title: action.payload.title,
-          ingredients: action.payload.ingredients
+          recipes: [...state.recipes, action.payload]
         }
       }
       return state
