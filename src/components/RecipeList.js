@@ -1,7 +1,7 @@
 import React from "react"
 import { connect } from "react-redux"
 import Grid from "material-ui/Grid"
-import RecipeSingle from "./RecipeSingle"
+import RecipeSingle from "components/RecipeSingle"
 
 const RecipeList = ({ recipes }) => {
   return (

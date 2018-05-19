@@ -6,7 +6,7 @@ import IconButton from "material-ui/IconButton"
 import Button from "material-ui/Button"
 import Typography from "material-ui/Typography"
 import MoreVertIcon from "material-ui-icons/MoreVert"
-import { CardStyle } from "../styles"
+import { CardStyle } from "styles"
 
 const RecipeSingle = ({ recipe }) => {
   return (
