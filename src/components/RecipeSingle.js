@@ -24,8 +24,8 @@ const RecipeSingle = ({ recipe }) => {
         <h3>Ingredients</h3>
         <CardContent>
           <Typography component="p">
-            {recipe.ingredients.map((item, i) => {
-              return <li key={i}>{item}</li>
+            {recipe.ingredients.map((ingredient, i) => {
+              return <li key={i}>{ingredient}</li>
             })}
           </Typography>
         </CardContent>

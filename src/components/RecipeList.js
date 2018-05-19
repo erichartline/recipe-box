@@ -13,10 +13,7 @@ const RecipeList = ({ recipes }) => {
   )
 }
 
-const mapStateToProps = state => {
-  return {
-    recipes: state.recipes
-  }
-}
+// destructured way to access state.recipes
+const mapStateToProps = ({ recipes }) => ({ recipes })
 
 export default connect(mapStateToProps)(RecipeList)
