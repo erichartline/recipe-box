@@ -6,12 +6,14 @@ export const REMOVE_RECIPE = "REMOVE_RECIPE"
 export const addRecipe = (id, title, ingredients) => {
   return {
     type: ADD_RECIPE,
-    id,
-    title,
-    ingredients: ingredients
-      .split(",")
-      .filter(el => el !== "")
-      .map(el => el.trim())
+    payload: {
+      id,
+      title,
+      ingredients: ingredients
+        .split(",")
+        .filter(el => el !== "")
+        .map(el => el.trim())
+    }
   }
 }
 
@@ -19,12 +21,14 @@ export const addRecipe = (id, title, ingredients) => {
 export const editRecipe = (id, title, ingredients) => {
   return {
     type: EDIT_RECIPE,
-    id,
-    title,
-    ingredients: ingredients
-      .split(",")
-      .filter(el => el !== "")
-      .map(el => el.trim())
+    payload: {
+      id,
+      title,
+      ingredients: ingredients
+        .split(",")
+        .filter(el => el !== "")
+        .map(el => el.trim())
+    }
   }
 }
 
@@ -32,6 +36,8 @@ export const editRecipe = (id, title, ingredients) => {
 export const removeRecipe = id => {
   return {
     type: REMOVE_RECIPE,
-    id
+    payload: {
+      id
+    }
   }
 }

@@ -29,22 +29,22 @@ const rootReducer = (state = initialState, action) => {
     case ADD_RECIPE:
       return {
         ...state,
-        id: action.id,
-        title: action.title,
-        ingredients: action.ingredients
+        id: action.payload.id,
+        title: action.payload.title,
+        ingredients: action.payload.ingredients
       }
     case EDIT_RECIPE:
-      if (state.title === action.title) {
+      if (state.title === action.payload.title) {
         return {
           ...state,
-          id: action.id,
-          title: action.title,
-          ingredients: action.ingredients
+          id: action.payload.id,
+          title: action.payload.title,
+          ingredients: action.payload.ingredients
         }
       }
       return state
     case REMOVE_RECIPE:
-      return state.filter(recipe => recipe.id !== action.id)
+      return state.filter(recipe => recipe.id !== action.payload.id)
     default:
       return state
   }
