@@ -35,13 +35,13 @@ const rootReducer = (state = initialState, action) => {
         recipes: [...state.recipes, action.payload]
       }
     case EDIT_RECIPE:
-      if (state.title === action.payload.title) {
-        return {
-          ...state,
-          recipes: [...state.recipes, action.payload]
-        }
+      return {
+        ...state,
+        recipes: state.recipes.map(
+          recipe =>
+            recipe.id === action.payload.id ? { ...action.payload } : recipe
+        )
       }
-      return state
     case REMOVE_RECIPE:
       return {
         ...state,

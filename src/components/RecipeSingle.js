@@ -7,12 +7,25 @@ import IconButton from "material-ui/IconButton"
 import Button from "material-ui/Button"
 import Typography from "material-ui/Typography"
 import MoreVertIcon from "material-ui-icons/MoreVert"
+import EditRecipeForm from "containers/EditRecipeForm"
 import { editRecipe, removeRecipe } from "actions"
 import { CardStyle } from "styles"
 
 class RecipeSingle extends Component {
+  state = {
+    showForm: false
+  }
+
+  toggleForm = () => {
+    this.setState({ showForm: !this.state.showForm })
+  }
+
   deleteRecipe = id => {
     this.props.deleteRecipe(this.props.recipe.id)
+  }
+  editRecipe = (id, title, ingredients) => {
+    const { recipe, editRecipe } = this.props
+    editRecipe(recipe.id, recipe.title, recipe.ingredients)
   }
   render() {
     const { recipe } = this.props
@@ -36,10 +49,15 @@ class RecipeSingle extends Component {
               })}
             </Typography>
           </CardContent>
-          <Button>Edit</Button>&nbsp;
+          <Button onClick={this.toggleForm}>Edit</Button>&nbsp;
           <Button onClick={this.deleteRecipe}>Delete</Button>
           <br />
         </CardStyle>
+        <EditRecipeForm
+          show={this.state.showForm}
+          onClose={this.toggleForm}
+          recipe={this.props.recipe}
+        />
       </Grid>
     )
   }
@@ -52,6 +70,9 @@ const mapDispatchToProps = dispatch => {
   return {
     deleteRecipe: id => {
       dispatch(removeRecipe(id))
+    },
+    editRecipe: (id, title, ingredients) => {
+      dispatch(editRecipe(id, title, ingredients))
     }
   }
 }
