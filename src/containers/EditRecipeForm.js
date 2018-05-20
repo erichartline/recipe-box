@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import { connect } from "react-redux"
 import Button from "material-ui/Button"
 import { editRecipe } from "actions"
-import { BackdropStyle, ModalStyle, TextBoxStyle, InputBoxStyle } from "styles"
+import { BackdropStyle, ModalStyle, TextBoxStyle } from "styles"
 
 class EditRecipeForm extends Component {
   state = {
@@ -32,12 +32,13 @@ class EditRecipeForm extends Component {
     return (
       <BackdropStyle>
         <ModalStyle>
-          <InputBoxStyle value={this.state.title} onChange={this.handleInput} />
+          <TextBoxStyle value={this.state.title} onChange={this.handleInput} />
           <br />
           <TextBoxStyle
             value={this.state.ingredients}
             onChange={this.handleTextBox}
           />
+          <br />
           <Button color="primary" onClick={this.editRecipe}>
             Update
           </Button>

@@ -2,7 +2,6 @@ import React, { Component } from "react"
 import { connect } from "react-redux"
 import Grid from "material-ui/Grid"
 import { CardHeader, CardContent } from "material-ui/Card"
-import Avatar from "material-ui/Avatar"
 import IconButton from "material-ui/IconButton"
 import Button from "material-ui/Button"
 import Typography from "material-ui/Typography"
@@ -33,7 +32,6 @@ class RecipeSingle extends Component {
       <Grid item xs={12} sm={6} lg={3}>
         <CardStyle>
           <CardHeader
-            avatar={<Avatar aria-label="Recipe">R</Avatar>}
             action={
               <IconButton>
                 <MoreVertIcon />

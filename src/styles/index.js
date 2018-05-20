@@ -1,5 +1,6 @@
 import styled, { injectGlobal } from "styled-components"
 import Card from "material-ui/Card"
+import TextField from "material-ui/TextField"
 import "typeface-roboto"
 
 injectGlobal`
@@ -22,16 +23,12 @@ export const FooterContainer = styled.div`
   }
 `
 
-export const TextBoxStyle = styled.textarea`
-  width: 50%;
-  padding-left: 5px;
-  margin-right: 5px;
-`
-
-export const InputBoxStyle = styled.input`
-  width: 50%;
-  padding-left: 5px;
-  margin-right: 5px;
+export const TextBoxStyle = styled(TextField)`
+  && {
+    width: 50%;
+    padding-left: 5px;
+    margin-right: 5px;
+  }
 `
 
 export const BackdropStyle = styled.div`
@@ -54,6 +51,7 @@ export const ModalStyle = styled.div`
     height: 300px;
     margin: 0 auto;
     padding: 30px;
+    z-index: 1;
   }
 `
 

@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import { connect } from "react-redux"
 import Button from "material-ui/Button"
 import { addRecipe } from "actions"
-import { BackdropStyle, ModalStyle, TextBoxStyle, InputBoxStyle } from "styles"
+import { BackdropStyle, ModalStyle, TextBoxStyle } from "styles"
 
 const randomId = Math.floor(Math.random() * 1000)
 
@@ -38,17 +38,19 @@ class AddRecipeForm extends Component {
     return (
       <BackdropStyle>
         <ModalStyle>
-          <InputBoxStyle
+          <TextBoxStyle
             value={this.state.title}
             onChange={this.handleInput}
             placeholder="Enter recipe name"
           />
+          <br />
           <br />
           <TextBoxStyle
             value={this.state.ingredients}
             onChange={this.handleTextBox}
             placeholder="Enter the ingredients here..."
           />
+          <br />
           <Button color="primary" onClick={this.addNewRecipe}>
             Add
           </Button>
