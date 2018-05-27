@@ -1,6 +1,6 @@
 import React from "react"
 import { connect } from "react-redux"
-import Grid from "material-ui/Grid"
+import Grid from "@material-ui/core/Grid"
 import RecipeSingle from "components/RecipeSingle"
 
 const RecipeList = ({ recipes }) => {

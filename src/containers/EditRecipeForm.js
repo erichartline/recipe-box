@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import { connect } from "react-redux"
-import Button from "material-ui/Button"
+import Button from "@material-ui/core/Button"
 import { editRecipe } from "actions"
 import { BackdropStyle, ModalStyle, TextBoxStyle } from "styles"
 

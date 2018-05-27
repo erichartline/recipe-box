@@ -2,10 +2,8 @@ import React, { Component } from "react"
 import { connect } from "react-redux"
 import Grid from "material-ui/Grid"
 import { CardHeader, CardContent } from "material-ui/Card"
-import IconButton from "material-ui/IconButton"
 import Button from "material-ui/Button"
 import Typography from "material-ui/Typography"
-import MoreVertIcon from "material-ui-icons/MoreVert"
 import EditRecipeForm from "containers/EditRecipeForm"
 import { editRecipe, removeRecipe } from "actions"
 import { CardStyle } from "styles"
@@ -31,14 +29,7 @@ class RecipeSingle extends Component {
     return (
       <Grid item xs={12} sm={6} lg={3}>
         <CardStyle>
-          <CardHeader
-            action={
-              <IconButton>
-                <MoreVertIcon />
-              </IconButton>
-            }
-            title={recipe.title}
-          />
+          <CardHeader title={recipe.title} />
           <h3>Ingredients</h3>
           <CardContent>
             <Typography component="p">
