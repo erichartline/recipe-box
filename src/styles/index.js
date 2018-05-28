@@ -1,19 +1,24 @@
 import styled, { injectGlobal } from "styled-components"
-import Card from "material-ui/Card"
-import TextField from "material-ui/TextField"
+import Card from "@material-ui/core/Card"
+import TextField from "@material-ui/core/TextField"
 import "typeface-roboto"
 
 injectGlobal`
     body {
         margin: auto;
         padding: 0;
-        text-align: center;
         width: 80%;
         background-color: #c7c7c7;
     }
 `
 
+export const HeaderStyle = styled.div`
+  text-align: center;
+`
+
 export const FooterContainer = styled.div`
+  text-align: center;
+
   a:link {
     text-decoration: none;
   }
@@ -58,5 +63,6 @@ export const ModalStyle = styled.div`
 export const CardStyle = styled(Card)`
   && {
     min-height: 300px;
+    text-align: center;
   }
 `

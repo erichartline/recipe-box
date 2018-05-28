@@ -1,9 +1,10 @@
 import React, { Component } from "react"
 import { connect } from "react-redux"
-import Grid from "material-ui/Grid"
-import { CardHeader, CardContent } from "material-ui/Card"
-import Button from "material-ui/Button"
-import Typography from "material-ui/Typography"
+import Grid from "@material-ui/core/Grid"
+import CardHeader from "@material-ui/core/CardHeader"
+import CardContent from "@material-ui/core/CardContent"
+import Button from "@material-ui/core/Button"
+import Typography from "@material-ui/core/Typography"
 import EditRecipeForm from "containers/EditRecipeForm"
 import { editRecipe, removeRecipe } from "actions"
 import { CardStyle } from "styles"
@@ -20,10 +21,12 @@ class RecipeSingle extends Component {
   deleteRecipe = id => {
     this.props.deleteRecipe(this.props.recipe.id)
   }
+
   editRecipe = (id, title, ingredients) => {
     const { recipe, editRecipe } = this.props
     editRecipe(recipe.id, recipe.title, recipe.ingredients)
   }
+
   render() {
     const { recipe } = this.props
     return (
